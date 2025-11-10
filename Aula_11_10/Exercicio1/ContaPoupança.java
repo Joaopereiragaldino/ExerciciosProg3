@@ -1,0 +1,33 @@
+package Aula_11_10.Exercicio1;
+
+public class ContaPoupança extends ContaBancaria {
+    
+    public ContaPoupança(String anome, double asaldo, int anumero){
+        super(anome, asaldo, anumero);
+    }
+
+    @Override
+    public boolean sacar(double valor){
+        if(valor < 0 || valor > this.saldo){
+            return false;
+        } else {
+            this.saldo -= valor;
+            return true;
+        }
+    }
+
+    @Override
+    public void depositar(double valor){
+        if(valor < 0){
+            System.out.println(" [ERRO] Não foi possível realizar o depósito.");
+        } else {
+            this.saldo = this.saldo + valor;
+            System.out.println("Depósito feito com sucesso. R$ " + this.saldo);
+        }
+    }
+
+    @Override
+    public void MostraSaldo(){
+        System.out.println("O saldo atual da sua conta: R$ " + this.saldo);
+    }
+}
