@@ -9,7 +9,7 @@ public class Questao3 {
         Scanner scanner = new Scanner(System.in);
         String entrada = scanner.nextLine();
 
-        File arquivo = new File(entrada + ".txt");
+        File arquivo = new File(entrada);
 
         System.out.println("Verificando arquivo");
 
